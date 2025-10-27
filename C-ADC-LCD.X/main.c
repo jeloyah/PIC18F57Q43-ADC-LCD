@@ -11,8 +11,6 @@
 
 void main(void) {
     
-    char Vadc_string[12];
-    float Vadc=0;
     
     /* System Clock Initialization */
 	CLOCK_Initialize();
@@ -63,15 +61,12 @@ void main(void) {
          ; /* while ADC */
 
     /* Calcular voltaje analogico */
-    Vadc = ADRES * (float)1.22E-03;
-    
+     
     
     /* Convertir a string */
-    sprintf(Vadc_string, "Vadc = %.2f V\n", Vadc);      
-        
+         
     /* Row 2, column 1 */
-    LCD_LOCATE(1,1);            
-    LCD_printstring(Vadc_string);
+   
     
     /* Refresh every 500 ms */
     TIMER0_Delay_ms(500);
