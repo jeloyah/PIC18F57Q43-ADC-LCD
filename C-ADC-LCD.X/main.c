@@ -57,7 +57,7 @@ void main(void) {
      ADC_Start();
         
      /* Wait for Go = 0 */
-	 while (ADC_conversionComplete)
+	 while (ADC_conversionNotComplete)
          ; /* while ADC */
 
     /* Calcular voltaje analogico */

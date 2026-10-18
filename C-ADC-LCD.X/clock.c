@@ -4,21 +4,14 @@
 void CLOCK_Initialize(void)
 {
 	/* HFINTOSC enabled */
-    /* OSCEN = 0x40; */
-    OSCENbits.HFOEN = 1;
+    OSCEN = 0x40;
     
     /* HFINTOSC = 64 MHz */
-	/* OSCFRQ = 0x08; */
-    OSCFRQbits.HFFRQ = 0b1000;
+	OSCFRQ = 0x08;
     
     /* Clock source = HFINTOSC, Clock Divider = 0 */
-    /* OSCCON1 = 0x60; */
-    OSCCON1bits.NOSC = 0b0110;
-    
-    OSCCON1bits.NDIV = 0b000;
+    OSCCON1 = 0x60;
 
     /* Clear clock switch flag */
-    /* PIR0 &= 0xF7; */
-    PIR0bits.CSWIF = 0;
-    
+    PIR0 &= 0xF7;
 }
